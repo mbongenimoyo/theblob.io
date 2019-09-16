@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="jquery-3.3.1.js"></script>
+<script src="main.js"></script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+
+input[type=text]{
+    width: 22%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #48b04a;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 26%;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.imgcontainer {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+#colors {
+    width: 22%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+       
+.imgcontainer, .container {border: 1px solid #C0C0C0;}
+
+</style>
+<div style="container">
+    
+<h2 align="center">Welcome to Blob!</h2>
+
+  <div class="imgcontainer">
+    <img src="blob.png" width="350" height="300" >
+  </div>
+
+  <div class="container">
+      
+    <h3 align="center">Choose a name and color for your blob!<br><br></h3> 
+       
+    <label for="name"><b>Name: </b></label>
+    <input type="text" placeholder="Enter Name" id="player" required>
+    <br>
+    
+    <label for="snakeColor"><b>Color: </b></label>
+    <select name="colors" id="colors">
+        <option class="color" id="1">Red</option>
+        <option class="color" id="2">Blue</option>
+        <option class="color" id="3">Green</option>
+        <option class="color" id="4">Yellow</option>
+        <option class="color" id="5">White</option>
+    </select>
+    
+    <label for="serverad"><b>Server: </b></label>
+    <select name="server" id="server">
+        <option class="serv" value="1">server 1</option>
+        <option class="serv" value="2">server 2</option>
+        <option class="serv" value="3">server 3</option>
+        <option class="serv" value="4">server 4</option>
+        <option class="serv" value="5">server 5</option>
+    </select>
+    
+    <br>
+    
+    <button  id="startBtn" onclick="SendData()">Play</button><br>
+    
+  </div>
+</div>
+<script>
+    function SendData(){
+         var color=document.getElementById('colors').value;
+         var name=document.getElementById('player').value;
+         var server=document.getElementById('server').value;
+         //console.log(i);
+         var queryString="?"+color+"&"+server+"&"+name;
+         var page="http//game.html";
+         console.log(queryString);
+        window.location.href=page+queryString;
+         
+    }
+ </script>  
+</body>
+</html>

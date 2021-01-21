@@ -18,7 +18,7 @@
         "p5": "^0.7.2",
         "request": "^2.88.0",
         "server.js": "^1.0.0",
-        "socket.io": "^2.1.1",
+        "socket.io": "^2.4.0",
         "socket.io-client": "^2.2.0",
         "socketio-load-test-artillery-example": "git+https://github.com/hassy/socketio-load-test-artillery-example.git",
         "victor": "^1.1.0"
